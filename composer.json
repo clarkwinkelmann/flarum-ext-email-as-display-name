@@ -1,0 +1,32 @@
+{
+    "name": "clarkwinkelmann/flarum-ext-email-as-display-name",
+    "description": "Use user emails as their display name",
+    "keywords": [
+        "flarum"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "require": {
+        "flarum/core": ">=0.1.0-beta.11 <0.1.0-beta.13"
+    },
+    "authors": [
+        {
+            "name": "Clark Winkelmann",
+            "email": "clark.winkelmann@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "extra": {
+        "flarum-extension": {
+            "title": "Email as Display Name",
+            "icon": {
+                "name": "fas fa-at",
+                "backgroundColor": "#62792e",
+                "color": "#fff"
+            }
+        },
+        "flagrow": {
+            "discuss": "https://discuss.flarum.org/d/22603"
+        }
+    }
+}
