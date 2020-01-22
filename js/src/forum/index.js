@@ -15,11 +15,11 @@ app.initializers.add('clarkwinkelmann-email-as-display-name', () => {
             const vdom = items.get('identification');
 
             if (
-                typeof vdom === 'object' &&
+                vdom &&
                 Array.isArray(vdom.children) &&
                 vdom.children.length > 0 &&
-                typeof vdom.children[0] === 'object' &&
-                typeof vdom.children[0].attrs === 'object'
+                vdom.children[0] &&
+                vdom.children[0].attrs
             ) {
                 vdom.children[0].attrs.placeholder = app.translator.trans('clarkwinkelmann-email-as-display-name.forum.log_in.username_or_email_placeholder');
             }
