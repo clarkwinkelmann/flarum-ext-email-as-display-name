@@ -18,3 +18,4 @@ This extension offers two features:
 
 - [GitHub](https://github.com/clarkwinkelmann/flarum-ext-email-as-display-name)
 - [Packagist](https://packagist.org/packages/clarkwinkelmann/flarum-ext-email-as-display-name)
+- [Discuss](https://discuss.flarum.org/d/22603)
