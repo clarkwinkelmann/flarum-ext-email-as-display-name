@@ -1,33 +1,21 @@
-import {extend} from 'flarum/extend';
-import app from 'flarum/app';
-import PermissionGrid from 'flarum/components/PermissionGrid';
-import ItemList from 'flarum/utils/ItemList';
-import EmailSettingsModal from './components/EmailSettingsModal';
-
-const translationPrefix = 'clarkwinkelmann-email-as-display-name.admin.permissions.';
+/* global app */
 
 app.initializers.add('clarkwinkelmann-email-as-display-name', () => {
-    app.extensionSettings['clarkwinkelmann-email-as-display-name'] = () => app.modal.show(new EmailSettingsModal());
-
-    extend(PermissionGrid.prototype, 'permissionItems', function (permissionGroups) {
-        const items = new ItemList();
-
-        items.add('view-own', {
+    app.extensionData.for('clarkwinkelmann-email-as-display-name')
+        .registerSetting({
+            setting: 'email-as-display-name.removeUsernameRegistration',
+            type: 'switch',
+            label: app.translator.trans('clarkwinkelmann-email-as-display-name.admin.settings.remove-username-registration')
+        })
+        .registerPermission({
             icon: 'fas fa-at',
-            label: app.translator.trans(translationPrefix + 'view-own'),
+            label: app.translator.trans('clarkwinkelmann-email-as-display-name.admin.permissions.view-own'),
             permission: 'email-as-display-name.view-own',
-        });
-
-        items.add('view-all', {
+        }, 'view')
+        .registerPermission({
             icon: 'fas fa-at',
-            label: app.translator.trans(translationPrefix + 'view-all'),
+            label: app.translator.trans('clarkwinkelmann-email-as-display-name.admin.permissions.view-all'),
             permission: 'email-as-display-name.view-all',
             allowGuest: true,
-        });
-
-        permissionGroups.add('clarkwinkelmann-email-as-display-name', {
-            label: app.translator.trans(translationPrefix + 'heading'),
-            children: items.toArray()
-        });
-    });
+        }, 'view');
 });

@@ -1,11 +1,9 @@
 clarkwinkelmann-email-as-display-name:
     admin:
         permissions:
-            heading: Email comme nom d'utilisateur
-            view-own: Voir sur son propre profil
-            view-all: Voir sur tous les profils
+            view-own: Voir l'email sur son propre profil
+            view-all: Voir l'email sur tous les profils
         settings:
-            title: Réglages de l'extension
             remove-username-registration: Retirer le nom d'utilisateur du formulaire d'inscription
     forum:
         log_in:

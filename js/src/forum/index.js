@@ -1,7 +1,8 @@
-import {extend} from 'flarum/extend';
-import app from 'flarum/app';
-import SignUpModal from 'flarum/components/SignUpModal';
-import LogInModal from 'flarum/components/LogInModal';
+import {extend} from 'flarum/common/extend';
+import SignUpModal from 'flarum/forum/components/SignUpModal';
+import LogInModal from 'flarum/forum/components/LogInModal';
+
+/* global app */
 
 app.initializers.add('clarkwinkelmann-email-as-display-name', () => {
     extend(SignUpModal.prototype, 'fields', function (items) {
