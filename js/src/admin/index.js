@@ -11,6 +11,7 @@ app.initializers.add('clarkwinkelmann-email-as-display-name', () => {
             icon: 'fas fa-at',
             label: app.translator.trans('clarkwinkelmann-email-as-display-name.admin.permissions.view-own'),
             permission: 'email-as-display-name.view-own',
+            allowGuest: true, // We need guest to allow for suspended/non-activated users
         }, 'view')
         .registerPermission({
             icon: 'fas fa-at',
